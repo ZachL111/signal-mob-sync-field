@@ -1,0 +1,73 @@
+{
+  "repo": "signal-mob-sync-field",
+  "language": "Go",
+  "category": "Mobile workflows",
+  "goal": "Create a Go reference implementation for sync workflows, centered on diagnostic reporting, negative fixtures, and human-readable error snapshots.",
+  "review_model": {
+    "terms": [
+      "form pressure",
+      "sync drift",
+      "local state",
+      "conflict cost"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "form pressure",
+      "signal": 80,
+      "slack": 47,
+      "drag": 20,
+      "confidence": 84,
+      "score": 231,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "sync drift",
+      "signal": 73,
+      "slack": 34,
+      "drag": 12,
+      "confidence": 67,
+      "score": 211,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "local state",
+      "signal": 80,
+      "slack": 51,
+      "drag": 26,
+      "confidence": 88,
+      "score": 221,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "conflict cost",
+      "signal": 73,
+      "slack": 54,
+      "drag": 32,
+      "confidence": 93,
+      "score": 197,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "form pressure",
+      "signal": 55,
+      "slack": 37,
+      "drag": 14,
+      "confidence": 94,
+      "score": 199,
+      "lane": "ship"
+    }
+  ]
+}
